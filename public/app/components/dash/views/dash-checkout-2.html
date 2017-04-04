@@ -1,0 +1,323 @@
+<div navi></div>
+
+<div class="row wizard-row">
+            <div class="col-md-6 col-md-offset-3 fuelux">
+              <div class="block-wizard panel panel-default">
+                <div id="wizard1" class="wizard wizard-ux">
+                  <ul class="steps">
+                    <li data-step="1" ng-click="showCheckoutStep(1)">Details<span class="chevron"></span></li>
+                      <li data-step="2" ng-click="showCheckoutStep(2)" class="active">Review <span class="chevron"></span></li>
+                    <li data-step="3" ng-click="showCheckoutStep(3)">Payment<span class="chevron"></span></li>
+                  </ul>
+                  <div class="step-content">
+                    <div  data-step="1" class="step-pane active">
+
+
+                        <!--
+<div class="col-md-12">
+              <div class="panel panel-primary panel-borders">
+                <div class="panel-heading panel-color"><span class="title">Full-width with borders</span></div>
+                <div class="panel-body">
+                  <div class="row">
+                        <div class="col-md-3">
+                           <strong>Delivery Summary:</strong>
+                        </div>
+
+                        <div class="col-md-9">
+                               A delivery for {{jobDeets.name}}  from   {{jobDeets.address.start_location.number}} {{jobDeets.address.start_location.name}}  to {{jobDeets.address.end_location.number}} {{jobDeets.address.end_location.name}}  on the {{jobDeets.jobDate}} at {{jobDeets.jobStartTime}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <hr>
+
+<!--                    Row 1
+
+                    <div class="row">
+                        <div class="col-md-3">
+                           <strong>Refund Terms:</strong>
+                        </div>
+
+                        <div class="col-md-9">
+                                We can issue a 100% refund on your deposit at any time before dispatch of our driver *Please see our <a ng-href="consumer-terms">terms</a>
+                        </div>
+                    </div>
+
+                     <br>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                           <strong>Delivery Items:</strong>
+                        </div>
+
+                        <div class="col-md-9">
+                          Small items x {{jobDeets.itemBoxes[0].qty}},
+                          Medium items x {{jobDeets.itemBoxes[1].qty}}
+                          Large items x {{jobDeets.itemBoxes[2].qty}}
+                        </div>
+
+
+                    </div>
+
+                    <br>
+                    <hr>
+
+                    <div class="row">
+
+                    <div class="col-md-3">
+                           <strong>Extra Helper:</strong>
+                        </div>
+
+                        <div ng-if="jobDeets.extraHelp == false" class="col-md-9 text-left">
+                                No
+                        </div>
+                        <div ng-if="jobDeets.extraHelp == true" class="col-md-9 text-left">
+                                Yes
+                        </div>
+                    </div>
+
+
+
+
+                    <br>
+                    <hr>
+
+                    <div class="row">
+
+                        <div class="col-md-3">
+                           <strong>Email:</strong>
+                        </div>
+
+                        <div class="col-md-9">
+                                {{jobDeets.email}}
+                        </div>
+
+
+                    </div>
+                    <br>
+                    <hr>
+
+                    <div class="row">
+
+                    <div class="col-md-3">
+                           <strong>Phone Number</strong>
+                        </div>
+
+                        <div class="col-md-9">
+                                {{jobDeets.number}}
+                        </div>
+
+                        </div>
+
+                    <br>
+
+                    <hr>
+
+                    <!--                    Row 2
+
+                    <div class="row well">
+                        <div class="col-md-2">
+                           <strong> <h4>Delivery Cost</h4> </strong>
+                        </div>
+
+                        <div class="col-md-2">
+                               <h2> £{{jobDeets.estiCalc}}</h2>
+                        </div>
+
+                        <div class="col-md-2">
+                            <strong> <h4>Deposit Payable</h4> </strong>
+                        </div>
+
+                        <div class="col-md-2">
+                               <h2>£{{jobDeets.deposit}}</h2>
+                        </div>
+
+                        <div class="col-md-2">
+                           <strong> <h4>Pay on Delivery</h4> </strong>
+                        </div>
+
+                        <div class="col-md-2">
+                              <h2>£{{jobDeets.toPay}}</h2>
+                        </div>
+                    </div>
+
+
+                </div>
+              </div>
+            </div>-->
+
+
+            <div class="panel panel-primary panel-borders">
+                <div class="panel-heading panel-color"><span class="title">Booking Details</span></div>
+                <div class="panel-body">
+
+                <table class="table table-striped table-fw-widget">
+                  <tbody>
+                    <tr>
+                      <td><strong style="font-family:'roboto' !important;">Contact Details</strong></td>
+                      <td class="number">{{jobDeets.name}} | {{jobDeets.email}} | {{jobDeets.number}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong style="font-family:'roboto' !important;">Pickup</strong></td>
+                      <td class="number"> {{jobDeets.address.start_location.number}} {{jobDeets.address.start_location.name}}  </td>
+                    </tr>
+                    <tr>
+                        <td><strong style="font-family:'roboto' !important;">Delivery</strong></td>
+                      <td class="number">{{jobDeets.address.end_location.number}} {{jobDeets.address.end_location.name}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong style="font-family:'roboto' !important;">Date & Time</strong></td>
+                      <td class="number">Delivery on the {{jobDeets.jobDate}} between {{jobDeets.jobStartTime}}</td>
+                    </tr>
+                      <tr>
+                          <td><strong style="font-family:'roboto' !important;">Delivery Items</strong></td>
+                      <td class="number"> Small items x {{jobDeets.itemBoxes[0].qty}},
+                          Medium items x {{jobDeets.itemBoxes[1].qty}}
+                          Large items x {{jobDeets.itemBoxes[2].qty}}</td>
+                    </tr>
+                      <tr>
+                          <td><strong style="font-family:'roboto' !important;">Extra Helper</strong></td>
+                      <td class="number"><div ng-if="jobDeets.extraHelp == false" class="col-md-9 pull-right">
+                                No
+                        </div>
+                        <div ng-if="jobDeets.extraHelp == true" class="col-md-9 pull-right">
+                                Yes
+                        </div></td>
+                    </tr>
+                      <tr>
+                          <td width="30%"><strong style="font-family:'roboto' !important;">Important notes</strong></td>
+                           <td width="70%">
+                           This price is for a ground floor to ground floor service. You will be charged an extra £5 per man per floor if you require loading from another floor. Any property that has an adequately functioning lift will not incur this charge.
+
+
+                            </ul>
+
+                          </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+                      </div>
+
+
+                           <div class="panel panel-primary panel-borders">
+                <div class="panel-heading panel-color"><span class="title">Payment Details</span></div>
+                <div class="panel-body">
+
+                <table class="table table-striped table-fw-widget">
+                  <tbody>
+
+                      <tr>
+                          <td><h5><strong style="font-family:'roboto' !important;">Delivery Total</strong></h5></td>
+                      <td class="number"><h4>£{{jobDeets.estiCalc}}.00</h4></td>
+                    </tr>
+                      <tr>
+                          <td><h5><strong style="font-family:'roboto' !important;">Payable On Delivery (cash)</strong></h5></td>
+                      <td class="number"><h4>£{{jobDeets.toPay}}.00</h4></td>
+                    </tr>
+                      <tr>
+                          <td><h4><strong style="font-family:'roboto' !important;">Deposit Due Now</strong></h4></td>
+                      <td class="number"><h2><strong>£{{jobDeets.deposit}}.00</stong></h2></td>
+                    </tr>
+
+
+                  </tbody>
+                </table>
+                    <div class="pull-right">I confirm that all the consignment details are correct and I acknowledge that I have read and agree to the <a href="/customer-terms" target="_blank">Terms</a> and Conditions of this agreement <input id="terms-agree" type="checkbox" name="gender" value="" ></div>
+              </div>
+                      </div>
+
+
+
+                      </form>
+                      <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+
+                              <a><button id="checkout-2-next" ng-click="next2()" class="btn btn-primary btn-space wizard-next pull-right">Next<i class="icon s7-angle-right"></i></button></a>
+                              <a href="/checkout"><button class="btn btn-default btn-space wizard-next pull-right"><i class="icon s7-angle-left"></i>Back</button></a>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+<!--
+<div class="row wizard-row">
+            <div class="col-md-12 fuelux">
+              <div class="block-wizard panel panel-default">
+                <div id="wizard1" class="wizard wizard-ux">
+                  <ul class="steps">
+                    <li data-step="1" ng-click="showCheckoutStep(1)" >Booking Review<span class="chevron"></span></li>
+                    <li data-step="2" ng-click="showCheckoutStep(2)" class="active">Add Contact Details<span class="chevron"></span></li>
+                    <li data-step="3" ng-click="showCheckoutStep(3)">Payment<span class="chevron"></span></li>
+                  </ul>
+                  <div class="step-content">
+                    <div  data-step="1" class="step-pane active">
+           <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3>Pleas Add Contact Details</h3>
+                </div>
+                <div class="panel-body">
+                  <form role="form" data-parsley-validate="" novalidate="" class="form-horizontal">
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">Name</label>
+                      <div class="col-sm-10">
+                        <input id="inputPassword3" required="" ng-model="jobDeets.name" placeholder="Name" class="form-control">
+                      </div>
+                    </div>
+
+                      <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                      <div class="col-sm-10">
+                        <input id="inputEmail3"  ng-model="jobDeets.email" type="email" required="" parsley-type="email" placeholder="Email" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">Number</label>
+                      <div class="col-sm-10">
+                        <input required=""  ng-model="jobDeets.number" placeholder="Number" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">Extra instructions for driver </label>
+                      <div class="col-sm-10">
+                        <textarea required=""  ng-model="jobDeets.instructions" class="form-control"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <div class="text-right">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-default btn-space">Go back to booking page</button>
+                            <button  ng-click="back()" class="btn btn-primary btn-space wizard-next"><i class="icon s7-angle-left"></i>Back Step</button>
+                            <button ng-click="next2()" class="btn btn-primary btn-space wizard-next">Next Step <i class="icon s7-angle-right"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+-->

@@ -1,0 +1,52 @@
+
+<div id="form-bp1" tabindex="-1" role="dialog" class="modal fade colored-header">
+    <div class="modal-dialog custom-width">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center">Add Collection Address</h3>
+            </div>
+            <div class="modal-body form">
+                <div class="panel-body">
+
+                <form role="form">
+                    <div class="form-group">
+                    <label>Collection Postcode</label>
+                    <input id="collection-postcode-input" class="form-control" force-selection="true" placeholder="Enter Postcode Here" g-places-autocomplete options="autocompleteOptions" ng-model="dashInstant.address.start_location.name" ng-change="updateMaps(); changeData()" ng-model-options='{debounce: 100}' />
+                    </div>
+                    <div class="form-group ">
+                    <label>Building/Door Number</label>
+                      <input id="collection-doornumber-input" class="form-control" ng-model="dashInstant.address.start_location.number" ng-change="changeData()" placeholder="House Name Or Number" />
+                    </div>
+                    <div class="form-group ">
+                    <label>What Floor?</label>
+                      <select>
+                      <option value="volvo">First</option>
+                      <option value="saab">Second</option>
+                      <option value="mercedes">Third</option>
+                      <option value="audi">fourth</option>
+                        <option value="volvo">Fith</option>
+                      <option value="saab">Sixth</option>
+                      <option value="mercedes">Seventh</option>
+                      <option value="audi">Eigth</option>
+                      </select>
+                    </div>
+                    <div class="form-group ">
+                    <label>Distance in which we can park?</label>
+                      <select>
+                      <option value="volvo">0-25m</option>
+                      <option value="saab">25-50m</option>
+                      <option value="mercedes">50-75m</option>
+                      <option value="audi">75-100m</option>
+                      </select>
+                    </div>
+                  </form>
+<div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  data-dismiss="modal" class="btn btn-default md-close">Cancel</button>
+                <button id="collection-address-done" type="button" data-dismiss="modal" class="btn btn-primary md-close">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
