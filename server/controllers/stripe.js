@@ -6,7 +6,7 @@ var User = require(__dirname + '/../models/user');
 
 var stripePay = {};
 
-stripePay.chargeCustomer = function(price, customerID, name, token, callback) {
+stripePay.chargeCustomer = function(price, customerID, name, token, utils, callback) {
     stripe.charges.create({
         amount: price*100, // stripe takes pence
         currency: "GBP",
@@ -16,8 +16,11 @@ stripePay.chargeCustomer = function(price, customerID, name, token, callback) {
     }, function(err, charge) {
         // asynchronously called
         if(err) {
+            utils.winston.log('info', JSON.stringify(err));
+            JSON.stringify(obj)
             callback(false);
         } else {
+            utils.winston.log('info', JSON.stringify(charge));
             callback(charge);
         }
     });

@@ -590,9 +590,9 @@ app.controller('DashInstantCtrl', function($scope, maps, $localStorage, items, r
         var fuelCost = $scope.dashInstant.distance * 1.5;
 
         var totalTime = $scope.loadTime + $scope.unloadTime + driveTime;
-        if(totalTime < 90) {
+        /*if(totalTime < 90) {
           totalTime = (90 + $scope.loadTime) + $scope.unloadTime;
-        }
+        }*/
         if($scope.dashInstant.extraHelp == true) {
             if(van == 'Small Van') {
                 rate = .50;

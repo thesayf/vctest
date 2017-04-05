@@ -19,6 +19,9 @@ var sgHelper = require('sendgrid').mail;
 var sg = require('sendgrid')('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');
 var env                     = require('node-env-file');
 var nodemailer              = require('nodemailer');
+var winston              = require('winston');
+winston.add(winston.transports.File, { filename: 'vc.log' });
+winston.remove(winston.transports.Console);
 
 
 var utils = {};
@@ -35,6 +38,7 @@ utils.multipartMiddleware = multipartMiddleware;
 utils.passport = passport;
 utils.localStrategy = localStrategy;
 utils.nodemailer = nodemailer;
+utils.winston = winston;
 
 var Quote       = require(__dirname + '/server/models/quote');
 var Token       = require(__dirname + '/server/models/token');

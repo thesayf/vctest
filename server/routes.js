@@ -5,15 +5,15 @@ module.exports = function(app, models, utils, cont, info) {
 
 	// CHARGE CUSTOMER DEPOSIT WITH STRIPE
 	app.post("/api/charge-card", function(req, res) {
-        cont.stripePay.chargeCustomer(req.body.user.deposit, req.body.user.email, req.body.user.name, req.body.stripe.id, function(resp) {
-			if(resp == false) {
-				// card declined
-				cont.func.sendInfo(res, false, {message: 'Payment Failed!'})
-			} else {
-				// charge ok
-				cont.func.sendInfo(res, true, {data: resp, message: 'Payment Successful!'})
-			}
-		})
+        cont.stripePay.chargeCustomer(req.body.user.deposit, req.body.user.email, req.body.user.name, req.body.stripe.id, utils, function(resp) {
+					if(resp == false) {
+						// card declined
+						cont.func.sendInfo(res, false, {message: 'Payment Failed!'})
+					} else {
+						// charge ok
+						cont.func.sendInfo(res, true, {data: resp, message: 'Payment Successful!'})
+					}
+				})
 	});
 
 	app.post('/api/list-drivers', function(req, res) {
@@ -30,7 +30,9 @@ module.exports = function(app, models, utils, cont, info) {
 		cont.swift.bookJob(utils.rest, req.body.data, function(resp) {
 			//currentStatus
 			var obj = JSON.parse(resp.rawEncoded);
-			console.log(obj);
+			utils.winston.log('info', JSON.stringify(obj));
+
+			//console.log(obj);
 			if(obj['delivery']) {
 					if(obj['delivery']['currentStatus']) {
 							var stat = obj['delivery']['currentStatus'];
