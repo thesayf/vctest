@@ -1,6 +1,6 @@
 var stripe = require("stripe")(
-  "sk_live_soQQdjDzUEp49Ue0Xb2qkPyP"
-  //"pk_test_GrFP5ytVZ9Df9ZKztAJbiOmc"
+  //"sk_live_soQQdjDzUEp49Ue0Xb2qkPyP"
+  "pk_test_GrFP5ytVZ9Df9ZKztAJbiOmc"
 );
 var User = require(__dirname + '/../models/user');
 
@@ -17,7 +17,7 @@ stripePay.chargeCustomer = function(price, customerID, name, token, utils, callb
         // asynchronously called
         if(err) {
             utils.winston.log('info', JSON.stringify(err));
-            JSON.stringify(obj)
+            //JSON.stringify(obj)
             callback(false);
         } else {
             utils.winston.log('info', JSON.stringify(charge));
